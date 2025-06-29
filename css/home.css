@@ -1,0 +1,213 @@
+/* Homepage Specific Styles */
+
+/* Editorial Hero Section */
+.editorial-hero {
+    padding: 160px 0 120px;
+    background: #ffffff;
+}
+
+.editorial-hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: #000000;
+    letter-spacing: -0.03em;
+}
+
+.editorial-hero-subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+}
+
+.editorial-hero-title span.nowrap {
+    white-space: nowrap;
+}
+
+.editorial-hero .container {
+    text-align: left;
+}
+
+/* Editorial Projects Section */
+.editorial-projects {
+    padding: 120px 0;
+    background: #ffffff;
+}
+
+.editorial-section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: #000000;
+    letter-spacing: -0.02em;
+}
+
+.project-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-row {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-row:hover {
+    background: rgba(0, 0, 0, 0.02);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 8px;
+}
+
+.project-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #666;
+    min-width: 60px;
+    margin-right: 2rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000000;
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.project-link {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-link::after {
+    content: '→';
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+    color: #000000;
+}
+
+.project-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* Editorial CTA Section */
+.editorial-cta {
+    padding: 120px 0;
+    background: #ffffff;
+    text-align: center;
+}
+
+.editorial-cta .cta-button {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    letter-spacing: 0.01em;
+    border: 2px solid #000000;
+}
+
+.editorial-cta .cta-button:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .project-title {
+        font-size: 1.3rem;
+    }
+    
+    .project-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .project-link {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .editorial-hero {
+        padding: 120px 0 80px;
+    }
+    
+    .editorial-projects {
+        padding: 80px 0;
+    }
+    
+    .editorial-cta {
+        padding: 80px 0;
+    }
+    
+    .editorial-hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+    
+    .editorial-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .editorial-section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .project-row {
+        padding: 1.5rem 0;
+    }
+    
+    .project-number {
+        min-width: 40px;
+        margin-right: 1rem;
+    }
+    
+    .project-title {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.editorial-hero-title,
+.editorial-hero-subtitle {
+    animation: fadeInUp 0.8s ease-out;
+} 
