@@ -32,9 +32,11 @@
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 4rem;
     align-items: start;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-info h2 {
@@ -49,7 +51,7 @@
     font-size: 1.2rem;
     color: #666;
     line-height: 1.6;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     font-weight: 400;
 }
 
@@ -57,6 +59,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 3rem;
 }
 
 .contact-method h3 {
@@ -82,82 +85,6 @@
 
 .contact-method a:hover {
     color: #666;
-}
-
-/* Contact Form */
-.contact-form-container {
-    background: #f8f8f8;
-    padding: 3rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: 500;
-    color: #000000;
-    font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 1rem;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.3s ease;
-    background: #ffffff;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #000000;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.submit-button {
-    padding: 1rem 2rem;
-    background: #000000;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    letter-spacing: 0.01em;
-    border: 2px solid #000000;
-    align-self: flex-start;
-}
-
-.submit-button:hover {
-    background: #ffffff;
-    color: #000000;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.submit-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
 }
 
 /* Contact Info Section */
@@ -212,27 +139,6 @@
     line-height: 1.6;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    letter-spacing: 0.01em;
-    border: 2px solid #000000;
-}
-
-.cta-button:hover {
-    background: #ffffff;
-    color: #000000;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .page-hero {
@@ -264,10 +170,6 @@
     
     .contact-info p {
         font-size: 1.1rem;
-    }
-    
-    .contact-form-container {
-        padding: 2rem;
     }
     
     .info-grid {

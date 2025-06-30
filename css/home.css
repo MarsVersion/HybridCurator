@@ -1,6 +1,5 @@
-/* Homepage Specific Styles */
+/* Homepage Specific Styles for Single-Page Layout */
 
-/* Editorial Hero Section */
 .editorial-hero {
     padding: 160px 0 120px;
     background: #ffffff;
@@ -13,30 +12,105 @@
     margin-bottom: 2rem;
     color: #000000;
     letter-spacing: -0.03em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.hero-subtext {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 300;
+    color: #6d6d6d;
 }
 
 .editorial-hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-top: 5rem;
     color: #666;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin-left: 0;
+    margin-right: 0;
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.01em;
+    text-align: left;
 }
 
 .editorial-hero-title span.nowrap {
     white-space: nowrap;
 }
 
-.editorial-hero .container {
-    text-align: left;
+.scroll-cue {
+    text-align: center;
+    margin-top: 3rem;
 }
 
-/* Editorial Projects Section */
-.editorial-projects {
-    padding: 120px 0;
-    background: #ffffff;
+#scroll-down-cue {
+    font-size: 2.5rem;
+    opacity: 0.5;
+    animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(18px); }
+}
+
+.about-section, .work-section, .journal-section, .contact-section {
+    padding: 120px 0 80px;
+    background: #fff;
+}
+
+.about-main-grid {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    min-height: 60vh;
+}
+
+.about-image-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: stretch;
+}
+
+.about-portrait {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.about-text-content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-text-content h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.about-text-content p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+    font-size: 2.2rem;
+    color: rgba(0, 0, 0, 0.9);
+    text-align: left;
+    position: relative;
+    margin-bottom: 1.5rem;
 }
 
 .editorial-section-title {
@@ -46,45 +120,49 @@
     text-align: center;
     color: #000000;
     letter-spacing: -0.02em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.project-list {
-    list-style: none;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.project-row {
+.project-cards {
     display: flex;
-    align-items: center;
-    padding: 2rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-card {
+    flex: 1 1 260px;
+    min-width: 260px;
+    max-width: 340px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     transition: all 0.3s ease;
 }
 
-.project-row:hover {
-    background: rgba(0, 0, 0, 0.02);
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    border-radius: 8px;
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-color: #000;
 }
 
-.project-number {
-    font-size: 1.2rem;
-    font-weight: 600;
+.project-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 1rem;
     color: #666;
-    min-width: 60px;
-    margin-right: 2rem;
-}
-
-.project-title {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #000000;
-    flex: 1;
-    margin-right: 2rem;
+    line-height: 1.5;
 }
 
 .project-link {
@@ -93,6 +171,11 @@
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
+    align-self: flex-start;
+}
+
+.project-link:hover {
+    color: #000000;
 }
 
 .project-link::after {
@@ -101,24 +184,39 @@
     transition: transform 0.3s ease;
 }
 
-.project-link:hover {
-    color: #000000;
-}
-
 .project-link:hover::after {
     transform: translateX(4px);
 }
 
-/* Editorial CTA Section */
-.editorial-cta {
-    padding: 120px 0;
-    background: #ffffff;
-    text-align: center;
+.work-list {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 2;
+    list-style: none;
+    padding: 0;
 }
 
-.editorial-cta .cta-button {
+.work-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.work-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+.cta-container {
+    margin-top: 2rem;
+}
+
+.cta-button {
     display: inline-block;
-    padding: 1.5rem 3rem;
+    padding: 1rem 2.5rem;
     background: #000000;
     color: #ffffff;
     text-decoration: none;
@@ -130,27 +228,117 @@
     border: 2px solid #000000;
 }
 
-.editorial-cta .cta-button:hover {
+.cta-button:hover {
     background: #ffffff;
     color: #000000;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
+.cta-button:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.cta-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.journal-intro {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 260px;
+}
+
+.contact-info h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.contact-info p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: -0.05em;
+    font-size: calc(100vw / (1440 / 40));
+    color: rgba(0, 0, 0, 0.9);
+    text-align: left;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.contact-methods {
+    margin-bottom: 2rem;
+}
+
+.contact-method {
+    margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.contact-method p {
+    margin-bottom: 0;
+}
+
+.contact-method a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-method a:hover {
+    color: #666;
+}
+
+.contact-info-section {
+    margin-top: 2rem;
+}
+
+.contact-info-section h3 {
+    margin-top: 12rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+
+.contact-info-section h3:first-child {
+    margin-top: 0;
+}
+
 @media (max-width: 900px) {
-    .project-title {
-        font-size: 1.3rem;
+    .editorial-hero-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
     }
-    
-    .project-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    
-    .project-link {
-        align-self: flex-end;
+    .project-card {
+        min-width: 220px;
+        padding: 1.5rem;
     }
 }
 
@@ -158,40 +346,37 @@
     .editorial-hero {
         padding: 120px 0 80px;
     }
-    
-    .editorial-projects {
-        padding: 80px 0;
+    .about-section, .work-section, .journal-section, .contact-section {
+        padding: 80px 0 60px;
     }
-    
-    .editorial-cta {
-        padding: 80px 0;
-    }
-    
-    .editorial-hero-title {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-    }
-    
-    .editorial-hero-subtitle {
-        font-size: 1.2rem;
-    }
-    
     .editorial-section-title {
         font-size: 2rem;
         margin-bottom: 3rem;
     }
-    
-    .project-row {
-        padding: 1.5rem 0;
+    .project-card {
+        min-width: 180px;
+        padding: 1rem;
     }
-    
-    .project-number {
-        min-width: 40px;
-        margin-right: 1rem;
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.875rem 2rem;
     }
-    
-    .project-title {
-        font-size: 1.2rem;
-        margin-right: 1rem;
+    .contact-grid {
+        flex-direction: column;
+    }
+    .about-main-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-image-container {
+        flex: 0 0 100%;
+        max-width: 100%;
+        align-self: center;
+    }
+    .about-text-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
     }
 }
 

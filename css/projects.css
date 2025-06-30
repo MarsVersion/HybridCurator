@@ -1,3 +1,6 @@
+/* Projects Page Specific Styles */
+
+/* Page Hero */
 .page-hero {
     padding: 160px 0 120px;
     text-align: center;
@@ -152,114 +155,6 @@
     line-height: 1.6;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-    letter-spacing: 0.01em;
-    border: 2px solid #000000;
-}
-
-.cta-button:hover {
-    background: #ffffff;
-    color: #000000;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 900px) {
-    .project-title {
-        font-size: 1.3rem;
-    }
-    
-    .project-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-    
-    .project-link {
-        align-self: flex-end;
-    }
-}
-
-@media (max-width: 768px) {
-    .page-hero {
-        padding: 120px 0 80px;
-    }
-    
-    .project-section {
-        padding: 80px 0;
-    }
-    
-    .projects-cta {
-        padding: 80px 0;
-    }
-    
-    .editorial-projects {
-        padding: 80px 0;
-    }
-    
-    .page-title {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-    }
-    
-    .page-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .editorial-section-title {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-    }
-    
-    .project-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .project-content h2 {
-        font-size: 2rem;
-    }
-    
-    .project-tagline {
-        font-size: 1.1rem;
-    }
-    
-    .project-description p {
-        font-size: 1rem;
-    }
-    
-    .project-row {
-        padding: 1.5rem 0;
-    }
-    
-    .project-number {
-        min-width: 40px;
-        margin-right: 1rem;
-    }
-    
-    .project-title {
-        font-size: 1.2rem;
-        margin-right: 1rem;
-    }
-    
-    .cta-title {
-        font-size: 2rem;
-    }
-    
-    .cta-text {
-        font-size: 1.1rem;
-    }
-}
-
 /* Editorial Section Title */
 .editorial-section-title {
     font-size: 2.5rem;
@@ -308,28 +203,6 @@
     color: #000000;
     flex: 1;
     margin-right: 2rem;
-}
-
-.project-link {
-    color: #666;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.project-link::after {
-    content: '→';
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.project-link:hover {
-    color: #000000;
-}
-
-.project-link:hover::after {
-    transform: translateX(4px);
 }
 
 /* Editorial Projects Section */
@@ -428,6 +301,12 @@
     flex-direction: column;
     align-items: center;
     box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.side-project:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .side-project .project-image {
@@ -483,7 +362,7 @@
     color: #fff;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 1100px) {
     .projects-layout {
         flex-direction: column;
@@ -501,6 +380,76 @@
     .side-project {
         max-width: 320px;
         flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 120px 0 80px;
+    }
+    
+    .project-section {
+        padding: 80px 0;
+    }
+    
+    .projects-cta {
+        padding: 80px 0;
+    }
+    
+    .editorial-projects {
+        padding: 80px 0;
+    }
+    
+    .page-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+    
+    .page-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .editorial-section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .project-content h2 {
+        font-size: 2rem;
+    }
+    
+    .project-tagline {
+        font-size: 1.1rem;
+    }
+    
+    .project-description p {
+        font-size: 1rem;
+    }
+    
+    .project-row {
+        padding: 1.5rem 0;
+    }
+    
+    .project-number {
+        min-width: 40px;
+        margin-right: 1rem;
+    }
+    
+    .project-title {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-text {
+        font-size: 1.1rem;
     }
 }
 

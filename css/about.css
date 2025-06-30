@@ -100,7 +100,6 @@
     letter-spacing: -0.02em;
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-transform: none;
-    letter-spacing: -0.02em;
     position: relative;
 }
 
@@ -138,9 +137,8 @@
 
 /* Mobile animations and responsive design */
 @media (max-width: 768px) {
-    /* About main section mobile styles */
-    body.about-page .about-main-section {
-        background: #ffffff !important;
+    .about-main-section {
+        background: #ffffff;
         padding: 80px 0;
     }
     
@@ -155,9 +153,8 @@
         transform: translateX(-30%);
     }
     
-    /* Make image fully opaque on mobile for better visibility */
-    body.about-page .about-portrait {
-        opacity: 1 !important;
+    .about-portrait {
+        opacity: 1;
     }
     
     .about-text-content {
@@ -165,29 +162,22 @@
         padding: 1rem;
     }
     
-    body.about-page .about-text-content h2 {
+    .about-text-content h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
-        color: #000000 !important;
+        color: #000000;
     }
     
-    body.about-page .about-text-content p {
+    .about-text-content p {
         font-size: 1rem;
         margin-bottom: 1rem;
-        color: #000000 !important;
+        color: #000000;
     }
     
-    /* Force black text for all text content in about section */
-    body.about-page .about-main-section .about-text-content * {
-        color: #000000 !important;
-    }
-    
-    /* About section mobile styles */
     .about-section {
         padding: 80px 0;
     }
     
-    /* Philosophy grid mobile styles */
     .philosophy-grid {
         grid-template-columns: 1fr;
         gap: 2rem;

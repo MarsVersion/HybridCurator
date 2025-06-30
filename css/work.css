@@ -24,10 +24,28 @@
     letter-spacing: 0.01em;
 }
 
+.page-description {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
 /* Services Section */
 .services-section {
     padding: 120px 0;
     background: #ffffff;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 4rem;
+    text-align: center;
+    color: #000000;
+    letter-spacing: -0.02em;
 }
 
 .services-grid {
@@ -57,13 +75,6 @@
     margin-bottom: 1rem;
     color: #000000;
     letter-spacing: -0.01em;
-}
-
-.service-card p {
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
 }
 
 .service-features {
@@ -121,12 +132,6 @@
     letter-spacing: -0.01em;
 }
 
-.client-type p {
-    color: #666;
-    line-height: 1.6;
-    font-weight: 400;
-}
-
 /* Past Work Section */
 .past-work-section {
     padding: 120px 0;
@@ -167,36 +172,32 @@
     margin-bottom: 1rem;
 }
 
-.work-link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
+/* Work CTA Section */
+.work-cta {
+    padding: 120px 0;
+    background: #f8f8f8;
+    text-align: center;
 }
 
-.work-link::after {
-    content: '→';
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.work-link:hover {
-    color: #666;
-}
-
-.work-link:hover::after {
-    transform: translateX(4px);
-}
-
-/* Section Titles */
-.section-title {
+.cta-content h2 {
     font-size: 2.5rem;
     font-weight: 300;
-    margin-bottom: 4rem;
-    text-align: center;
+    margin-bottom: 1.5rem;
     color: #000000;
     letter-spacing: -0.02em;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.contact-email {
+    font-size: 1.1rem;
+    color: #000000;
+    font-weight: 500;
 }
 
 /* Responsive Design */
@@ -207,7 +208,8 @@
     
     .services-section,
     .clients-section,
-    .past-work-section {
+    .past-work-section,
+    .work-cta {
         padding: 80px 0;
     }
     
@@ -217,6 +219,10 @@
     
     .page-subtitle {
         font-size: 1.2rem;
+    }
+    
+    .page-description {
+        font-size: 1.1rem;
     }
     
     .section-title {
@@ -241,5 +247,13 @@
     .past-work-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
     }
 } 

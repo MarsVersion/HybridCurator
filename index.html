@@ -23,22 +23,20 @@
     
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="editorial-dark">
     <nav class="navbar">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Jung Me Chai</a>
+            <a href="#hero" class="nav-logo">Jung Me Chai</a>
             <div class="nav-links">
-                <a href="/" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="work.html" class="nav-link">Work With Me</a>
-                <a href="projects.html" class="nav-link">Projects</a>
-                <a href="journal.html" class="nav-link">Journal</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#work" class="nav-link">Work With Me</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#journal" class="nav-link">Journal</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -48,35 +46,91 @@
         </div>
     </nav>
     <main>
-        <section class="editorial-hero">
+        <section id="hero" class="editorial-hero">
             <div class="container">
-                <h1 class="editorial-hero-title"><span class="nowrap">Art. Tech. Context.</span><br>With code. With care.<br><span class="hero-subtext">Jung Me Chai – hybrid curator</span></h1>
-                <p class="editorial-hero-subtitle">Contemporary art curator turned technologist — building tools, platforms, and strategies at the intersection of culture and code.</p>
+                <h1 class="editorial-hero-title">
+                    <span class="nowrap">Art. Tech. Context.</span><br>
+                    With code. With care.<br>
+                    <span class="hero-subtext">Jung Me Chai – hybrid curator</span>
+                </h1>
+                <p class="editorial-hero-subtitle">Curating systems, platforms, and ideas across art and code.<br>From exhibitions to interfaces — the work of a hybrid curator.</p>
+                <div class="scroll-cue">
+                    <span id="scroll-down-cue" aria-label="Scroll down">&#8595;</span>
+                </div>
             </div>
         </section>
-        <section class="editorial-projects">
+        <section id="about" class="about-section">
             <div class="container">
-                <section class="about-section">
-                    <div class="philosophy-grid">
-                        <div class="philosophy-item">
-                            <h3>Built with care</h3>
-                            <p class="philosophy-description">Every system I build is designed with care for the people who will use it. Whether it's an artist looking for visibility, a curator seeking new voices, or an audience member discovering work that moves them.</p>
-                        </div>
-                        <div class="philosophy-item">
-                            <h3>Visibility</h3>
-                            <p class="philosophy-description">Technology should make hidden things visible. I focus on creating tools that surface underrepresented artists, ideas, and perspectives that might otherwise remain unseen.</p>
-                        </div>
-                        <div class="philosophy-item">
-                            <h3>Think in systems</h3>
-                            <p class="philosophy-description">I think in systems, not just individual solutions. How do the tools we build connect to broader cultural ecosystems? How do they support sustainable, equitable practices?</p>
+                <div class="about-main-grid">
+                    <div class="about-image-container">
+                        <img src="images/hc-jm-sw.png" alt="Jung Me Chai portrait" class="about-portrait">
+                    </div>
+                    <div class="about-text-content">
+                    
+                        <p>I'm a curator, writer, and now creative technologist.</p>
+                        <p>I used to run the art space Diskurs Berlin and write about art for magazines. My curatorial work has taken me across Europe and Asia, collaborating with institutions like Kunstmuseum Bochum, Asia Triennial Manchester, and Mediations Biennale.</p>
+                        <p>In 2024, I began combining my curatorial practice with coding. That led to Busy Mars — an AI-powered platform designed to help art professionals and institutions connect and discover overlooked voices in art and tech.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="editorial-projects">
+            <div class="container">
+                <h2 class="editorial-section-title">Projects / Tools</h2>
+                <div class="project-cards">
+                    <div class="project-card">
+                        <h3>Busy Mars</h3>
+                        <p>AI platform for art discovery</p>
+                        <a href="https://www.busymars.com/" target="_blank" rel="noopener" class="project-link">Visit →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Bariatric Assistant</h3>
+                        <p>Tool for physicians</p>
+                        <a href="https://utimes.info/" target="_blank" rel="noopener" class="project-link">Visit →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Writing/Column Work</h3>
+                        <p>Wolganmisool, Discursus, etc.</p>
+                        <a href="https://www.discursus.info/publications/" target="_blank" rel="noopener" class="project-link">Archive →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="work" class="work-section">
+            <div class="container">
+                <h2 class="editorial-section-title">Work With Me</h2>
+                <ul class="work-list">
+                    <li>Advising for Institutions</li>
+                    <li>Custom Tools for Cultural Projects</li>
+                    <li>Workshops & Talks on Art x AI</li>
+                </ul>
+                <div class="cta-container">
+                    <a href="#contact" class="cta-button">Let's work together →</a>
+                </div>
+            </div>
+        </section>
+        <section id="journal" class="journal-section">
+            <div class="container">
+                <h2 class="editorial-section-title">Journal / Writings</h2>
+                <p class="journal-intro">Coming soon: essays, notes, and reflections on art, technology, and curatorial practice.</p>
+            </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Let's Connect</h2>
+                        <p>Working at the intersection of art and technology?</p>
+                        <p>Or building something new?</p>
+                        <p>I'm open to thoughtful collaborations.</p>
+                        <p>Feel free to reach out.</p>
+                        <p>Let's bring your project to life together.</p>
+                        <div class="contact-info-section">
+                            <h3>Location</h3>
+                            <p>Based in Berlin, Germany, but available for remote collaboration worldwide.</p>
                         </div>
                     </div>
-                </section>
-            </div>
-        </section>
-        <section class="editorial-cta">
-            <div class="container">
-                <a href="/contact" class="cta-button">Looking to collaborate or learn more? Let's talk.</a>
+                </div>
             </div>
         </section>
     </main>
