@@ -50,6 +50,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Back to Top functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.visibility = 'visible';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.visibility = 'hidden';
+            }
+        });
+        
+        // Initially hide the button
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.visibility = 'hidden';
+        backToTopBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
+    }
+    
     // Navbar scroll effect
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
