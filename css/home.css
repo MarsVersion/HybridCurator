@@ -687,4 +687,63 @@
     border-color: #000;
     background: rgba(0,0,0,0.03);
     color: #111;
+}
+
+/* Footer Back to Top Button */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-to-top-btn {
+    background: transparent;
+    padding: 0.5rem 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+    border: none;
+    color: #000000;
+}
+
+.back-to-top-btn:hover,
+.back-to-top-btn:focus {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.back-to-top-btn:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-center {
+        order: 2;
+    }
+    
+    .footer-left {
+        order: 1;
+    }
+    
+    .footer-right {
+        order: 3;
+    }
 } 

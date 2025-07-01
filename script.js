@@ -50,33 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Back to Top functionality
-    const backToTopBtn = document.getElementById('back-to-top');
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // Show/hide back to top button based on scroll position
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.style.opacity = '1';
-                backToTopBtn.style.visibility = 'visible';
-            } else {
-                backToTopBtn.style.opacity = '0';
-                backToTopBtn.style.visibility = 'hidden';
-            }
-        });
-        
-        // Initially hide the button
-        backToTopBtn.style.opacity = '0';
-        backToTopBtn.style.visibility = 'hidden';
-        backToTopBtn.style.transition = 'opacity 0.3s ease, visibility 0.3s ease';
-    }
-    
     // Navbar scroll effect
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
@@ -225,6 +198,27 @@ document.addEventListener('DOMContentLoaded', function() {
             clearTimeout(timeout);
             timeout = setTimeout(later, wait);
         };
+    }
+    
+    // Back to top functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', debounce(function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.style.display = 'block';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        }, 100));
+        
+        // Smooth scroll to top when clicked
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     }
     
     // Apply debouncing to scroll events
