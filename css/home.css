@@ -1,7 +1,7 @@
 /* Homepage Specific Styles for Single-Page Layout */
 
 .editorial-hero {
-    padding: 160px 0 120px;
+    padding: 50px 0 120px;
     background: #ffffff;
 }
 
@@ -55,8 +55,9 @@
 }
 
 .about-section, .contact-section, .journal-section {
-    padding: 120px 0 30px;
+    padding: 0px 0 5px;
     background: #fff;
+    
 }
 
 .contact-section .work-section {
@@ -262,7 +263,7 @@
     height: 252px;
     border-radius: 50%;
     border: 1px solid #bbbbbb;
-    background: transparent;
+    background: #ffffff;
     color: #000;
     text-decoration: none;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -451,7 +452,7 @@
     }
     
     .about-section, .contact-section, .journal-section {
-        padding: 80px 0 60px;
+        padding: 72px 0 15px;
     }
     
     .contact-section .work-section {
@@ -745,5 +746,157 @@
     
     .footer-right {
         order: 3;
+    }
+}
+
+/* Video Sections */
+.video-section {
+    padding: 0.02rem 0;
+    background: #ffffff;
+    position: relative;
+    margin-top:12vh;
+}
+
+.video-section .container {
+    max-width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.full-width-video {
+    width: 20%;
+    height: auto;
+    max-width: 500px;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Video positioning - corners */
+.video-section:nth-of-type(1) .container {
+    justify-content: flex-end;
+    padding-right: 2rem;
+    margin-right: 25%;
+}
+
+/* Fallback image styling */
+.full-width-video img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Full-width video background section */
+.video-background-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 2;
+}
+
+.video-background-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* Adjust existing sections for video background */
+.video-background-section .cta-container {
+    margin: 0;
+    transform: none;
+    animation: none;
+}
+
+.video-background-section .writings-bubble-link {
+    transform: none;
+    animation: none;
+}
+
+/* Mobile responsiveness for videos */
+@media (max-width: 768px) {
+    .video-section {
+        padding: 0.125rem 0;
+    }
+    
+    .video-section .container {
+        padding: 0 1rem;
+    }
+    
+    .full-width-video {
+        width: 45%;
+        max-width: 300px;
+    }
+    
+    /* Maintain corner positioning on mobile */
+    .video-section:nth-of-type(1) .container {
+        justify-content: flex-end;
+        padding-right: 1rem;
+        margin-right: 15%;
+    }
+    
+    .video-background-content {
+        padding: 2rem 1rem;
+        gap: 2rem;
+    }
+}
+
+/* Ensure videos work well on all devices */
+@media (max-width: 480px) {
+    .video-section {
+        padding: 0.0625rem 0;
+    }
+    
+    .video-section .container {
+        padding: 0 0.5rem;
+    }
+    
+    .full-width-video {
+        width: 50%;
+        max-width: 200px;
+    }
+    
+    /* Maintain corner positioning on small mobile */
+    .video-section:nth-of-type(1) .container {
+        justify-content: flex-end;
+        padding-right: 0.5rem;
+        margin-right: 10%;
+    }
+    
+    .video-background-content {
+        padding: 1rem 0.5rem;
+        gap: 1.5rem;
     }
 } 

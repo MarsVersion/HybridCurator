@@ -187,6 +187,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Video speed control for background videos
+    const backgroundVideos = document.querySelectorAll('.video-background');
+    backgroundVideos.forEach(video => {
+        // Set playback rate to slow down the video (0.5 = half speed, 0.2 = 20% speed)
+        video.playbackRate = 0.2;
+        
+        // Ensure video plays at the set speed when it loads
+        video.addEventListener('loadedmetadata', function() {
+            this.playbackRate = 0.2;
+        });
+        
+        // Maintain speed if video restarts
+        video.addEventListener('play', function() {
+            this.playbackRate = 0.2;
+        });
+    });
+    
     // Performance optimization: Debounce scroll events
     function debounce(func, wait) {
         let timeout;
