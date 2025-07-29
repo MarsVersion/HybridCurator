@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Access | Jung Me Chai - Hybrid Curator</title>
+    <meta name="description" content="Private demo access for Jeonnam Museum team.">
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Demo Access Page Styles - Editorial Design */
+        body {
+            padding-top: 80px;
+            background: #ffffff;
+        }
+        
+        /* Editorial Hero Header Style */
+        header {
+            background: #ffffff;
+            text-align: center;
+            padding: 80px 0 60px;
+            border-bottom: none;
+        }
+        
+        header h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: #000000;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+        
+        header p {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #666;
+            margin: 0;
+            letter-spacing: 0.01em;
+            line-height: 1.5;
+        }
+        
+        /* Main Content */
+        main {
+            min-height: calc(100vh - 300px);
+            padding: 3rem 0 6rem;
+            background: #ffffff;
+        }
+        
+        .access-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .access-form {
+            background: #ffffff;
+            border: 1.5px solid rgba(60, 60, 60, 0.3);
+            border-radius: 8px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .access-form h2 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 2rem;
+            letter-spacing: 0.01em;
+            line-height: 1.4;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+        
+        #access-code {
+            width: 100%;
+            padding: 1.25rem 1.75rem;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+            background: #ffffff;
+            transition: all 0.3s ease;
+            outline: none;
+            letter-spacing: 0.01em;
+            text-align: center;
+        }
+        
+        #access-code:focus {
+            border-color: #000000;
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .submit-btn {
+            background: #000000;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 1.25rem 2.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.01em;
+            min-width: 150px;
+        }
+        
+        .submit-btn:hover,
+        .submit-btn:focus {
+            background: #333333;
+            transform: translateY(-2px);
+            outline: none;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+        
+        .error-message {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            color: #c53030;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.95rem;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Back link */
+        .back-link {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.01em;
+        }
+        
+        .back-link a:hover {
+            color: #000000;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            header {
+                padding: 3rem 0;
+            }
+            
+            header h1 {
+                font-size: clamp(1.8rem, 4vw, 2.5rem);
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .access-form {
+                padding: 2rem 1.5rem;
+            }
+            
+            #access-code {
+                padding: 1rem 1.25rem;
+                font-size: 1rem;
+            }
+            
+            .submit-btn {
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Jung Me Chai - hybrid curator</a>
+            <div class="nav-links">
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#projects" class="nav-link">Projects</a>
+                <a href="index.html#work" class="nav-link">Working with me</a>
+                <a href="index.html#writings" class="nav-link">Writings</a>
+                <a href="demo.html" class="nav-link active">Demo</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+          <header>
+          <div class="container">
+              <h1>미술관 팀을 위한<br>데모 페이지입니다</h1>
+              <p>This is a demo page for the museum team.</p>
+          </div>
+      </header>
+
+    <main>
+        <div class="access-container">
+            <form class="access-form" id="access-form">
+                <h2>접속 코드를 입력해주세요<br>Please enter your access code</h2>
+                
+                <div class="form-group">
+                    <label for="access-code">Access Code</label>
+                    <input 
+                        type="password" 
+                        id="access-code" 
+                        name="access-code" 
+                        placeholder="Enter access code"
+                        autocomplete="off"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="submit-btn">Access Demo</button>
+                
+                <div class="error-message" id="error-message">
+                    잘못된 접속 코드입니다. 다시 시도해주세요.<br>
+                    Invalid access code. Please try again.
+                </div>
+            </form>
+            
+            <div class="back-link">
+                <a href="index.html">← Back to Main Site</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <a href="https://github.com/MarsVersion" target="_blank" rel="noopener" class="footer-link">Github</a>
+                    <a href="mailto:yes@hybridcurator.com" class="footer-link">Contact</a>
+                    <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="footer-center">
+                    <a href="index.html" class="footer-link">Back to Main Site</a>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-copyright">© Jung Me Chai · hybrid curator</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on links
+            const navLinkElements = document.querySelectorAll('.nav-link');
+            navLinkElements.forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    navToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+
+        // Access Code Validation
+        const accessForm = document.getElementById('access-form');
+        const accessCodeInput = document.getElementById('access-code');
+        const errorMessage = document.getElementById('error-message');
+        const correctCode = 'JMOAdemo';
+
+        accessForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const enteredCode = accessCodeInput.value.trim();
+            
+            if (enteredCode === correctCode) {
+                // Success - redirect to chat.html
+                window.location.href = 'chat.html';
+            } else {
+                // Show error message
+                errorMessage.classList.add('show');
+                accessCodeInput.value = '';
+                accessCodeInput.focus();
+                
+                // Hide error message after 5 seconds
+                setTimeout(() => {
+                    errorMessage.classList.remove('show');
+                }, 5000);
+            }
+        });
+
+        // Clear error message when user starts typing
+        accessCodeInput.addEventListener('input', () => {
+            errorMessage.classList.remove('show');
+        });
+
+        // Focus input on page load
+        window.addEventListener('load', () => {
+            accessCodeInput.focus();
+        });
+    </script>
+</body>
+</html> 
