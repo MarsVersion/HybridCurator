@@ -25,7 +25,7 @@ jobs:
           IONOS_PORT: ${{ secrets.IONOS_PORT }}
           IONOS_REMOTE_DIR: ${{ secrets.IONOS_REMOTE_DIR }}
         run: |
-          lftp -u "$IONOS_USERNAME","$IONOS_PASSWORD" -p "$IONOS_PORT" sftp://"$IONOS_HOST" <<EOF
+          lftp -u "$IONOS_USERNAME","$IONOS_PASSWORD" sftp://"$IONOS_HOST":"$IONOS_PORT" <<EOF
           set sftp:auto-confirm yes
           mirror --reverse --verbose --delete \
             --exclude .git/ \
