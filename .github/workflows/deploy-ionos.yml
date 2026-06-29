@@ -14,23 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
       - name: Deploy via SFTP
-        env:
-          IONOS_HOST: ${{ secrets.IONOS_HOST }}
-          IONOS_USERNAME: ${{ secrets.IONOS_USERNAME }}
-          IONOS_PASSWORD: ${{ secrets.IONOS_PASSWORD }}
-          IONOS_PORT: ${{ secrets.IONOS_PORT }}
-          IONOS_REMOTE_DIR: ${{ secrets.IONOS_REMOTE_DIR }}
-        run: |
-          lftp -u "$IONOS_USERNAME","$IONOS_PASSWORD" sftp://"$IONOS_HOST":"$IONOS_PORT" <<EOF
-          set sftp:auto-confirm yes
-          mirror --reverse --verbose --delete \
-            --exclude .git/ \
-            --exclude .github/ \
-            --exclude README.md \
-            ./ "$IONOS_REMOTE_DIR"
-          bye
-          EOF
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+        with:
+          server: ${{ secrets.IONOS_HOST }}
+          username: ${{ secrets.IONOS_USERNAME }}
+          password: ${{ secrets.IONOS_PASSWORD }}
+          port: ${{ secrets.IONOS_PORT }}
+          local_path: './*'
+          remote_path: '/hybridcurator'
+          sftpArgs: '-o ConnectTimeout=5'
