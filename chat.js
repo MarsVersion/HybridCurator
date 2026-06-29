@@ -126,9 +126,16 @@ class MuseumChatbot {
         const navLinks = document.querySelector('.nav-links');
         
         if (navToggle && navLinks) {
+            const setNavExpanded = (expanded) => {
+                navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            };
+
+            setNavExpanded(false);
+
             navToggle.addEventListener('click', () => {
-                navToggle.classList.toggle('active');
-                navLinks.classList.toggle('active');
+                const isOpen = navLinks.classList.toggle('active');
+                navToggle.classList.toggle('active', isOpen);
+                setNavExpanded(isOpen);
             });
             
             // Close mobile menu when clicking on links
@@ -137,6 +144,7 @@ class MuseumChatbot {
                 link.addEventListener('click', () => {
                     navToggle.classList.remove('active');
                     navLinks.classList.remove('active');
+                    setNavExpanded(false);
                 });
             });
             
@@ -145,6 +153,7 @@ class MuseumChatbot {
                 if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
                     navToggle.classList.remove('active');
                     navLinks.classList.remove('active');
+                    setNavExpanded(false);
                 }
             });
         }

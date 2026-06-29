@@ -13,13 +13,13 @@
     <meta property="og:description" content="Curator and technologist creating inclusive systems across art and technology. Creator of Busy Mars, founder of DISKURS Berlin." />
     <meta property="og:url" content="https://www.hybridcurator.com" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.hybridcurator.com/path-to-your-image.jpg" /> <!-- Replace with your image URL -->
+    <meta property="og:image" content="https://www.hybridcurator.com/images/hc-jm-sw.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Hybrid Curator – Jung Me Chai" />
     <meta name="twitter:description" content="Curator and technologist creating inclusive systems across art and technology." />
-    <meta name="twitter:image" content="https://www.hybridcurator.com/path-to-your-image.jpg" /> <!-- Replace with your image URL -->
+    <meta name="twitter:image" content="https://www.hybridcurator.com/images/hc-jm-sw.png" />
     
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/home.css">
@@ -40,14 +40,14 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">Jung Me Chai - hybrid curator</a>
-            <div class="nav-links">
+            <div class="nav-links" id="site-navigation">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#work" class="nav-link">Working with me</a>
                 <a href="#writings" class="nav-link">Writings</a>
                 <a href="demo.html" class="nav-link">Demo</a>
             </div>
-            <button class="nav-toggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-navigation">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -65,6 +65,7 @@
                     autoplay 
                     playsinline 
                     loop
+                    aria-hidden="true"
                     poster="images/hc Facebook fallback.png">
                     <source src="images/hc Facebook.mp4" type="video/mp4">
                     <img src="images/hc Facebook fallback.png" alt="Video fallback image">
@@ -109,19 +110,19 @@
                         <h3>Busy Mars</h3>
                         <p><strong>AI-powered platform</strong> that helps curators, artists, and institutions discover underrepresented voices in the art world.</p>
                         <div class="project-spacer"></div>
-                        <a href="https://www.busymars.com/" target="_blank" rel="noopener" class="project-link">Visit</a>
+                        <a href="https://www.busymars.com/" target="_blank" rel="noopener" class="project-link" aria-label="Visit Busy Mars (opens in new tab)">Visit</a>
                     </div>
                     <div class="project-card">
                         <h3>Diskurs Berlin</h3>
                         <p><strong>Independent project space</strong> I founded in Berlin, focused on curatorial experimentation, dialogue, and international exchange.</p>
                         <div class="project-spacer"></div>
-                        <a href="https://www.discursus.info/" target="_blank" rel="noopener" class="project-link">Visit</a>
+                        <a href="https://www.discursus.info/" target="_blank" rel="noopener" class="project-link" aria-label="Visit Diskurs Berlin (opens in new tab)">Visit</a>
                     </div>
                     <div class="project-card">
                         <h3>Bariatric Assistant</h3>
                         <p><strong>Tool developed for a medical practice</strong> to support bariatric patients with accessible, structured information.</p>
                         <div class="project-spacer"></div>
-                        <a href="https://utimes.info/" target="_blank" rel="noopener" class="project-link">Visit</a>
+                        <a href="https://utimes.info/" target="_blank" rel="noopener" class="project-link" aria-label="Visit Bariatric Assistant (opens in new tab)">Visit</a>
                     </div>
                 </div>
             </div>
@@ -133,7 +134,7 @@
                         <p>Working at the intersection of art and technology?</p>
                         <p>Or building something new?</p>
                         <p>I'm open to thoughtful collaborations.</p>
-                        <p>Feel free to reach out.</p>
+                        <p>Feel free to <a href="mailto:yes@hybridcurator.com">reach out</a>.</p>
                         <p>Let's bring your project to life together.</p>
                         <div class="contact-info-section">
                         </div>
@@ -186,18 +187,16 @@
                 autoplay 
                 playsinline 
                 loop
+                aria-hidden="true"
                 poster="images/hc code fallback.png">
                 <source src="images/hc code.mp4" type="video/mp4">
-                <img src="images/hc code fallback.png" alt="Video fallback image">
             </video>
-            <div class="video-background-overlay"></div>
             <div class="video-background-content">
                 <div class="cta-container">
-                    <a href="mailto:yes@busymars.com" class="cta-button">Work With Me!</a>
+                    <a href="mailto:yes@hybridcurator.com" class="cta-button">Contact &amp; Work with me</a>
                 </div>
-                
                 <div class="writings-content" id="writings">
-                    <a href="https://www.discursus.info/writings/" target="_blank" rel="noopener" class="writings-bubble-link">
+                    <a href="https://www.discursus.info/writings/" target="_blank" rel="noopener" class="writings-bubble-link" aria-label="Writings on Diskurs Berlin (opens in new tab)">
                         <div class="writings-bubble-content">
                             <h2 class="writings-bubble-title">Writings</h2>
                             <p class="writings-bubble-desc">
@@ -217,7 +216,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <a href="https://github.com/MarsVersion" target="_blank" rel="noopener" class="footer-link">Github</a>
+                    <a href="https://github.com/MarsVersion" target="_blank" rel="noopener" class="footer-link" aria-label="Github profile (opens in new tab)">Github</a>
                     <a href="mailto:yes@hybridcurator.com" class="footer-link">Contact</a>
                     <a href="privacy.html" class="footer-link">Privacy Policy</a>
                 </div>

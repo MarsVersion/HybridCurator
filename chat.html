@@ -22,14 +22,14 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">Jung Me Chai - hybrid curator</a>
-      <div class="nav-links">
+      <div class="nav-links" id="site-navigation">
         <a href="index.html#about" class="nav-link">About</a>
         <a href="index.html#projects" class="nav-link">Projects</a>
         <a href="index.html#work" class="nav-link">Working with me</a>
         <a href="index.html#writings" class="nav-link">Writings</a>
         <a href="chat.html" class="nav-link active">Demo</a>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-navigation">
         <span></span>
         <span></span>
         <span></span>
@@ -60,8 +60,11 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-left">
-          <a href="https://github.com/MarsVersion" target="_blank" rel="noopener" class="footer-link">Github</a>
-          <a href="mailto:yes@hybridcurator.com" class="footer-link">Contact</a>
+          <a href="https://github.com/MarsVersion" target="_blank" rel="noopener" class="footer-link" aria-label="Github profile (opens in new tab)">Github</a>
+          <a href="mailto:yes@hybridcurator.com" class="footer-link">
+            <span aria-hidden="true">Contact</span>
+            <span class="sr-only">Send mail to yes@hybridcurator.com</span>
+          </a>
           <a href="privacy.html" class="footer-link">Privacy Policy</a>
         </div>
         <div class="footer-center">
