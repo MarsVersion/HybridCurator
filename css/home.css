@@ -182,6 +182,18 @@
     letter-spacing: 0.01em;
 }
 
+.project-card h3.project-title-bm {
+    color: #985021;
+}
+
+.project-card h3.project-title-ns {
+    color: #2e7e57;
+}
+
+.project-card h3.project-title-yrj {
+    color: #4984c3;
+}
+
 .project-card p {
     font-size: 1rem;
     color: #333;
