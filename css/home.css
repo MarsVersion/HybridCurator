@@ -140,8 +140,9 @@
 
 /* Enhanced Project Cards */
 .project-cards {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
     width: 100%;
     max-width: 1200px;
@@ -149,6 +150,8 @@
 }
 
 .project-card {
+    box-sizing: border-box;
+    flex: 0 0 calc((100% - 3rem) / 3);
     min-width: 0;
     background: #fff;
     border: 2px solid #eee;
@@ -526,8 +529,8 @@
         font-size: 1.2rem;
     }
     
-    .project-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .project-card {
+        flex-basis: calc((100% - 1.5rem) / 2);
     }
     
     .work-services-grid {
@@ -920,8 +923,8 @@
 
 /* Ensure videos work well on all devices */
 @media (max-width: 480px) {
-    .project-cards {
-        grid-template-columns: 1fr;
+    .project-card {
+        flex-basis: 100%;
     }
 
     .video-section {
