@@ -952,3 +952,24 @@
         gap: 1.5rem;
     }
 } 
+
+/* Keep decorative video layers from intercepting contact clicks. */
+.video-background-section video,
+.video-background-section::before,
+.video-background-section::after,
+.video-background-overlay {
+    pointer-events: none !important;
+}
+
+.video-background-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+.video-background-content .cta-container,
+.video-background-content .cta-button {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
